@@ -64,7 +64,7 @@ if(isset($_GET['absen'])) {
                     }
                     $result2 = $conn->query($sql2);
                     if($result2){
-                        header('location: /Project Absensi/?menu=absensiu');
+                        header('location: ./?menu=absensiu');
                     }
                     else{
                         echo "Request failed to send, please try again";
@@ -86,7 +86,7 @@ if(isset($_GET['absen'])) {
         }
         $result2 = $conn->query($sql2);
         if($result2 && $_POST['keterangan']!="Bruh WDYM" && $_POST['keterangan']!="Hadir" && $_POST['keterangan']!="Sudah Absen"){
-            header("location: /Project Absensi/?menu=absensiu&absen=$_SESSION[Group]");
+            header("location: ./?menu=absensiu&absen=$_SESSION[Group]");
         }
     }
     $date = date("Y-m-d");
@@ -97,10 +97,10 @@ if(isset($_GET['keluar'])) {
     $sql = "DELETE FROM `akunabsensi` WHERE `ID`='$_GET[keluar]'";
     $result = $conn->query($sql);
     if ($result) {
-        header("location: /Project Absensi/?menu=absensiu");
+        header("location: ./?menu=absensiu");
     }
     else{
-        header("location: /Project Absensi/?menu=absensiu");
+        header("location: ./?menu=absensiu");
     }
 }
 ?>

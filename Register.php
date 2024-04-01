@@ -6,7 +6,7 @@ if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["passwor
     $sql2 = "INSERT INTO `akun` (`Username`, `Email`, `Password`) VALUES ('$_POST[username]', '$_POST[email]', '$_POST[password]')";
     $result2 = $conn->query($sql2);
     if($result2){
-      header('location: /Project Absensi/?login');
+      header('location: ./?login');
     }
     else{
       echo '<script>alert("Request failed to send, please try again");</script>';

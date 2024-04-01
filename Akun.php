@@ -27,27 +27,27 @@ if(isset($_GET['delete'])){
     $sql = "DELETE FROM `akunabsensi` WHERE `ID`='$_GET[delete]'";
     $result = $conn->query($sql);
     if ($result) {
-    header("location: /Project Absensi/?menu=akun");
+    header("location: ./?menu=akun");
     }
     else{
-    header("location: /Project Absensi/?menu=akun");
+    header("location: ./?menu=akun");
     }
 }
 if(isset($_POST['edit'])){
     $sql = "UPDATE `akunabsensi` SET `Nama`='$_POST[nama]',`Kelamin`='$_POST[kelamin]',`Alamat`='$_POST[alamat]',`TglLahir`='$_POST[tgllahir]',`Email`='$_POST[email]',`NoHP`='$_POST[nohp]',`Keterangan`='$_POST[keterangan]' WHERE `ID`='$_GET[edit]'";
     $result = $conn->query($sql);
     if ($result) {
-    header("location: /Project Absensi/?menu=akun");
+    header("location: ./?menu=akun");
     }
     else{
-    header("location: /Project Absensi/?menu=akun");
+    header("location: ./?menu=akun");
     }
 }
 if(isset($_GET['tambah'])){
     $sql2 = "INSERT INTO `akunabsensi` (`Groupname`,`Nama`,`Kelamin`,`Alamat`,`TglLahir`,`Email`,`NoHP`,`Keterangan`) VALUES ('$_SESSION[Groupname]','$_GET[nama]','$_GET[kelamin]','$_GET[alamat]','$_GET[tgllahir]','$_GET[email]','$_GET[nohp]','$_GET[keterangan]')";
     $result2 = $conn->query($sql2);
     if ($result2) {
-    header("location: /Project Absensi/?menu=akun");
+    header("location: ./?menu=akun");
     }
     else{
         echo "Request failed to send, please try again";

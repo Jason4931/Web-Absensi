@@ -26,7 +26,7 @@ if (isset($_GET["k"])) {
     $sql2 = "UPDATE `terlambat` SET `Waktu`='$_GET[terlambat]' WHERE `Groupname`='$_SESSION[Groupname]'";
     $result2 = $conn->query($sql2);
     if($result2){
-        header('location: /Project Absensi/?menu=absensis');
+        header('location: ./?menu=absensis');
     }
     else{
         echo "Request failed to send, please try again";
@@ -38,7 +38,7 @@ if (isset($_GET["kp"])) {
     $sql2 = "UPDATE `terlambat` SET `Pulang`='$_GET[pulang]' WHERE `Groupname`='$_SESSION[Groupname]'";
     $result2 = $conn->query($sql2);
     if($result2){
-        header('location: /Project Absensi/?menu=absensis');
+        header('location: ./?menu=absensis');
     }
     else{
         echo "Request failed to send, please try again";
@@ -50,7 +50,7 @@ if (mysqli_num_rows($resultT)==0){
     $sql2 = "INSERT INTO `terlambat` (`Groupname`, `Waktu`) VALUES ('$_SESSION[Groupname]', '')";
     $result2 = $conn->query($sql2);
     if($result2){
-        header('location: /Project Absensi/?menu=absensis');
+        header('location: ./?menu=absensis');
     }
     else{
         echo "Request failed to send, please try again";
@@ -117,7 +117,7 @@ if (isset($_POST["absen"])) {
                 }
                 $result2 = $conn->query($sql2);
                 if($result2){
-                    header('location: /Project Absensi/?menu=absensis');
+                    header('location: ./?menu=absensis');
                 }
                 else{
                     echo "Request failed to send, please try again";
@@ -139,7 +139,7 @@ if (isset($_POST["absen"])) {
     }
     $result2 = $conn->query($sql2);
     if($result2 && $_POST['keterangan']!="Bruh WDYM" && mysqli_num_rows($resultakun)>0 && $_POST['keterangan']!="Sudah Absen"){
-        header('location: /Project Absensi/?menu=absensis');
+        header('location: ./?menu=absensis');
     }
 }
 $date = date("Y-m-d");
@@ -149,10 +149,10 @@ if(isset($_GET['delete'])){
     $sql = "DELETE FROM `absen` WHERE `ID`='$_GET[delete]'";
     $result = $conn->query($sql);
     if ($result) {
-    header("location: /Project Absensi/?menu=absensis");
+    header("location: ./?menu=absensis");
     }
     else{
-    header("location: /Project Absensi/?menu=absensis");
+    header("location: ./?menu=absensis");
     }
   }
 ?>

@@ -9,7 +9,7 @@ if(isset($_GET['create'])){
     $result2 = $conn->query($sql2);
     if ($result && $result2) {
       sleep(3);
-      header("location: /Project Absensi/?logout");
+      header("location: ./?logout");
     }
     else{
       echo "Request failed to send, please try again";

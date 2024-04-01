@@ -13,7 +13,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
       $row = $result->fetch_assoc();
       $_SESSION["Groupname"]=$row["Groupname"];
     }
-    header('location: /Project Absensi/?menu=home');
+    header('location: ./?menu=home');
   }
   else {
     echo '<script>alert("Email atau Password salah");</script>';
