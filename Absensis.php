@@ -191,7 +191,7 @@ if(isset($_GET['delete'])){
                     }
                     echo "Batas Jam Terlambat : "; ?><b><?php echo $batas; ?></b><?php
                     if(!isset($_GET['batas'])) {
-                        echo "<a class='btn bg-success text-white btn-sm' href='/Project Absensi/?menu=absensis&batas'>Ganti</a>";
+                        echo "<a class='btn bg-success text-white btn-sm' href='./?menu=absensis&batas'>Ganti</a>";
                     }
                     else if(isset($_GET['batas'])) { ?>
                         <input name="terlambat" type="time" class="form-control w-25" required>
@@ -213,7 +213,7 @@ if(isset($_GET['delete'])){
                         }
                         echo "Batas Jam Pulang : "; ?><b><?php echo $batasp; ?></b><?php
                         if(!isset($_GET['batasp'])) {
-                            echo "<a class='btn bg-success text-white btn-sm' href='/Project Absensi/?menu=absensis&batasp'>Ganti</a>";
+                            echo "<a class='btn bg-success text-white btn-sm' href='./?menu=absensis&batasp'>Ganti</a>";
                         }
                         else if(isset($_GET['batasp'])) { ?>
                             <input name="pulang" type="time" class="form-control w-25" required>
@@ -265,7 +265,7 @@ if(isset($_GET['delete'])){
                     ?>
                     </div>
                     <div class="col-1">
-                    <?php echo "<a class='btn btn-danger btn-sm' href='/Project Absensi/?menu=absensis&delete=".$row['ID']."'>Delete</a>"; ?>
+                    <?php echo "<a class='btn btn-danger btn-sm' href='./?menu=absensis&delete=".$row['ID']."'>Delete</a>"; ?>
                     </div>
                 </div><?php
             }
@@ -273,8 +273,8 @@ if(isset($_GET['delete'])){
         if(mysqli_num_rows($resultall)>10) { ?>
             <div class="center mt-4">
                 <div class="pagination">
-                    <a href="/Project Absensi/?menu=absensis" class="<?=$hal1?>">1</a>
-                    <a href="/Project Absensi/?menu=absensis&hal2" class="<?=$hal2?>">2</a>
+                    <a href="./?menu=absensis" class="<?=$hal1?>">1</a>
+                    <a href="./?menu=absensis&hal2" class="<?=$hal2?>">2</a>
                     <?php 
                     $max_pages = 100;
                     $links_per_page = 10;
@@ -282,7 +282,7 @@ if(isset($_GET['delete'])){
                         $hal = "hal" . $i;
                         $condition = ($i - 1) * $links_per_page;
                         if (mysqli_num_rows($resultall) > $condition) {
-                            echo '<a href="/Project Absensi/?menu=absensis&' . $hal . '" class="' . ${$hal} . '">' . $i . '</a>';
+                            echo '<a href="./?menu=absensis&' . $hal . '" class="' . ${$hal} . '">' . $i . '</a>';
                         }
                     }
                     ?>

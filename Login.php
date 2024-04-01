@@ -39,7 +39,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         <button class="btn bg-primary w-100 py-2 my-2 text-black" type="submit">Login</button>
         <div class="text-center mt-4">
           <label>Tidak punya akun?</label><br>
-          <label><a href="/Project Absensi/?register" style="text-decoration:none">Register</a></label>
+          <label><a href="./?register" style="text-decoration:none">Register</a></label>
         </div>
       </form>
     </div>

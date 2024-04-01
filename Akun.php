@@ -81,7 +81,7 @@ if(isset($_GET['inputsearch'])){
                             <div class="col-lg-2 col-md-2 col-sm-3 col-12 mt-sm-0 mt-1">
                                 <?php
                                 if(!isset($_GET['add'])) {
-                                    echo "<a class='btn bg-success text-white btn-sm w-100' href='/Project Absensi/?menu=akun&add'>Tambah</a>";
+                                    echo "<a class='btn bg-success text-white btn-sm w-100' href='./?menu=akun&add'>Tambah</a>";
                                 }
                                 else if(isset($_GET['add'])) {
                                     echo '<button class="btn bg-success text-white btn-sm w-100" type="submit" name="tambah">Done</button>';
@@ -159,7 +159,7 @@ if(isset($_GET['inputsearch'])){
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-6 text-end">
                                     <?php
                                     if(!isset($_GET['edit'])) {
-                                        echo "<a class='btn btn-secondary btn-sm w-100' href='/Project Absensi/?menu=akun&edit=".$row['ID']."'>Edit</a>";
+                                        echo "<a class='btn btn-secondary btn-sm w-100' href='./?menu=akun&edit=".$row['ID']."'>Edit</a>";
                                     }
                                     else if(isset($_GET['edit'])) {
                                         echo '<button class="btn btn-secondary btn-sm w-100" type="submit" name="edit">Done</button>';
@@ -167,7 +167,7 @@ if(isset($_GET['inputsearch'])){
                                     ?>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-6">
-                                    <?php echo "<a class='btn btn-danger btn-sm w-100' href='/Project Absensi/?menu=akun&delete=".$row['ID']."'>Remove</a>"; ?>
+                                    <?php echo "<a class='btn btn-danger btn-sm w-100' href='./?menu=akun&delete=".$row['ID']."'>Remove</a>"; ?>
                                 </div>
                                 <?php }
                                 if(isset($_GET['edit']) && $row['ID']==$_GET['edit']) { ?>
@@ -250,8 +250,8 @@ if(isset($_GET['inputsearch'])){
                     if(mysqli_num_rows($resultall)>10) { ?>
                         <div class="center mt-4">
                             <div class="pagination">
-                                <a href="/Project Absensi/?menu=akun" class="<?=$hal1?>">1</a>
-                                <a href="/Project Absensi/?menu=akun&hal2" class="<?=$hal2?>">2</a>
+                                <a href="./?menu=akun" class="<?=$hal1?>">1</a>
+                                <a href="./?menu=akun&hal2" class="<?=$hal2?>">2</a>
                                 <?php 
                                 $max_pages = 100;
                                 $links_per_page = 10;
@@ -259,7 +259,7 @@ if(isset($_GET['inputsearch'])){
                                     $hal = "hal" . $i;
                                     $condition = ($i - 1) * $links_per_page;
                                     if (mysqli_num_rows($resultall) > $condition) {
-                                        echo '<a href="/Project Absensi/?menu=akun&' . $hal . '" class="' . ${$hal} . '">' . $i . '</a>';
+                                        echo '<a href="./?menu=akun&' . $hal . '" class="' . ${$hal} . '">' . $i . '</a>';
                                     }
                                 }
                                 ?>

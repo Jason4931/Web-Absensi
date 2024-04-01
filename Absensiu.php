@@ -202,7 +202,7 @@ if(isset($_GET['keluar'])) {
                                         <input class="btn bg-primary text-white mt-1" type="submit" name="absen" value="<?=$row2["Groupname"]?>">
                                     </div>
                                     <div class="col-4 text-end">
-                                        <a class="btn bg-danger text-white mt-1" href="/Project Absensi/?menu=absensiu&keluar=<?=$row2["ID"]?>">Keluar</a>
+                                        <a class="btn bg-danger text-white mt-1" href="./?menu=absensiu&keluar=<?=$row2["ID"]?>">Keluar</a>
                                     </div>
                                 </div>
                             <?php }

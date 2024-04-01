@@ -46,14 +46,14 @@ $result = $conn->query($sql);
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Filter</button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="/Project Absensi/?menu=historiu">All</a>
-          <a href="/Project Absensi/?menu=historiu&masuk">Masuk</a>
-          <a href="/Project Absensi/?menu=historiu&tdkmasuk">Tdk Masuk</a>
-          <a href="/Project Absensi/?menu=historiu&hadir">Hadir</a>
-          <a href="/Project Absensi/?menu=historiu&ijin">Ijin</a>
-          <a href="/Project Absensi/?menu=historiu&sakit">Sakit</a>
-          <a href="/Project Absensi/?menu=historiu&terlambat">Terlambat</a>
-          <a href="/Project Absensi/?menu=historiu&alpa">Alpa</a>
+          <a href="./?menu=historiu">All</a>
+          <a href="./?menu=historiu&masuk">Masuk</a>
+          <a href="./?menu=historiu&tdkmasuk">Tdk Masuk</a>
+          <a href="./?menu=historiu&hadir">Hadir</a>
+          <a href="./?menu=historiu&ijin">Ijin</a>
+          <a href="./?menu=historiu&sakit">Sakit</a>
+          <a href="./?menu=historiu&terlambat">Terlambat</a>
+          <a href="./?menu=historiu&alpa">Alpa</a>
         </div>
       </div>
       <hr><p class="card-text" style="text-align: justify;">
@@ -93,8 +93,8 @@ $result = $conn->query($sql);
       if(mysqli_num_rows($resultall)>10 && !isset($_GET['masuk']) && !isset($_GET['tdkmasuk']) && !isset($_GET['hadir']) && !isset($_GET['ijin']) && !isset($_GET['sakit']) && !isset($_GET['terlambat']) && !isset($_GET['alpa'])) { ?>
         <div class="center mt-4">
             <div class="pagination">
-                <a href="/Project Absensi/?menu=historiu" class="<?=$hal1?>">1</a>
-                <a href="/Project Absensi/?menu=historiu&hal2" class="<?=$hal2?>">2</a>
+                <a href="./?menu=historiu" class="<?=$hal1?>">1</a>
+                <a href="./?menu=historiu&hal2" class="<?=$hal2?>">2</a>
                 <?php 
                 $max_pages = 100;
                 $links_per_page = 10;
@@ -102,7 +102,7 @@ $result = $conn->query($sql);
                     $hal = "hal" . $i;
                     $condition = ($i - 1) * $links_per_page;
                     if (mysqli_num_rows($resultall) > $condition) {
-                        echo '<a href="/Project Absensi/?menu=historiu&' . $hal . '" class="' . ${$hal} . '">' . $i . '</a>';
+                        echo '<a href="./?menu=historiu&' . $hal . '" class="' . ${$hal} . '">' . $i . '</a>';
                     }
                 }
                 ?>
